@@ -1,9 +1,7 @@
-<html>
-    <head>
-        <title>Movies</title>
-    </head>
+@extends('layouts.app')
 
-    <body>
+@section('title', 'Movies')
+@section('content')
         @foreach ($movies as $movie)
             <li>
             <a href="{{route('movies.show', ['movie' => $movie->id])}}">
@@ -12,5 +10,4 @@
             <p>{{$movie->storyline}}</p>
             </li>
          @endforeach
-    </body>
-</html>
+@endsection
